@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<h1>Welcome to Joe's Hotdogs!</h1>
+	<h2>Your Order</h2>
+	<script language="javascript">
+	hotdogs = prompt("How many hotdogs?", "");
+	fries = prompt("How many fries?", "");
+	sodas = prompt("How many sodas?", "");
+
+	total_h = hotdogs * 3.25;
+	total_f = fries * 2.00;
+	total_s = sodas * 1.50;
+	subtotal = total_s + total_f + total_h;
+	discount = "";
+	if(subtotal > 20){
+		subtotal = subtotal - (subtotal * .10);
+		discount = "You qualified for our 10% discount.";
+	}
+	tax = (subtotal * .0625);
+	tax = (Math.round(tax * 100))/100;
+	total = (subtotal + tax).toFixed(2);
+
+	document.write("# HotDogs: " + hotdogs + " at $3.25 is " + total_h + "<br>")
+	document.write("# Fries: " + fries + " at $2.00 is " + total_f + "<br>")
+	document.write("# Sodas: " + sodas + " at $1.50 is " + total_s + "<br>")
+	document.write( discount + "<br>" + "Subtotal: $" + subtotal + "<br>" + "Meals Tax: $" + tax + "<br>" + "Total: $" + total)
+
+	</script>
+</body>
+</html>
